@@ -47,11 +47,11 @@ fi
 
 ### 6. COPY .ZSHRC ###
 if [[ ! -f "ALACRITTY_SOURCE" ]]; then
-  error ".zshrc not found in $DOTFILES_DIR"
+  error ".alacritty not found in $DOTFILES_DIR"
 fi
 
 log "Copying .alacritty.toml"
-cp "$ZSHRC_SOURCE" "$ZSHRC_TARGET"
+cp "$ALACRITTY_SOURCE" "$ALACRITTY_TARGET"
 
 ### 7. APPLY CONFIG ###
 log "Applying alacritty config"
