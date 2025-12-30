@@ -45,16 +45,14 @@ else
 fi
 
 
-### 6. COPY .ZSHRC ###
-if [[ ! -f "ALACRITTY_SOURCE" ]]; then
+### 2. COPY .ZSHRC ###
+if [[ ! -f "$ALACRITTY_SOURCE" ]]; then
   error ".alacritty.toml not found in $DOTFILES_DIR"
 fi
 
 log "Copying .alacritty.toml"
 cp "$ALACRITTY_SOURCE" "$ALACRITTY_TARGET"
 
-### 7. APPLY CONFIG ###
-log "Applying alacritty config"
-source "$ZSHRC_TARGET" || true
-
+### 3. APPLY CONFIG ###
+log "Restart Alacritty to apply config"
 log "Done ✅"
