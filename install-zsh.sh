@@ -4,7 +4,7 @@ set -e
 
 ### CONFIG ###
 DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/dotfiles"
-ZSHRC_SOURCE="$DOTFILES_DIR/.zshrc"
+ZSHRC_SOURCE="$DOTFILES_DIR/zsh/.zshrc"
 ZSHRC_TARGET="$HOME/.zshrc"
 
 ### HELPERS ###
