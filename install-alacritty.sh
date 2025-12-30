@@ -3,7 +3,7 @@
 ### CONFIGS ###
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DOTFILES_DIR="$SCRIPT_DIR"
-ALACRITTY_SOURCE="$DOTFILES_DIR/alacritty/alacritty.toml"
+ALACRITTY_SOURCE="$DOTFILES_DIR/alacritty/.alacritty.toml"
 ALACRITTY_TARGET="$HOME/.alacritty.toml"
 
 ### HELPERS ###
@@ -47,7 +47,7 @@ fi
 
 ### 6. COPY .ZSHRC ###
 if [[ ! -f "ALACRITTY_SOURCE" ]]; then
-  error ".alacritty not found in $DOTFILES_DIR"
+  error ".alacritty.toml not found in $DOTFILES_DIR"
 fi
 
 log "Copying .alacritty.toml"
