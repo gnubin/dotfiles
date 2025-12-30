@@ -16,5 +16,12 @@ chmod +x ./dotfiles/*.sh
 для установки и настройки zsh запутите скрип install-zsh.sh командой
 
 ```bash
-./install.sh
+./dotfiles/install-zsh.sh
+```
+
+## Установка и настрока alacritty
+для установки и настройки alacritty запутите скрип install-alacritty.sh командой
+
+```bash
+./dotfiles/install-alacritty.sh
 ```
