@@ -1,0 +1,97 @@
+[window]
+
+decorations = "None"
+
+# Размер окна в символах
+#dimensions = { columns = 120, lines = 35 }
+
+# Отступы
+padding = { x = 20, y = 20 }
+
+# Прозрачность (0.0 - полностью прозрачный, 1.0 - непрозрачный)
+opacity = 0.95
+
+[font]
+# Основной шрифт
+#normal = { family = "Cascadia Code", style = "Regular" }
+
+# Размер шрифта
+size = 14
+
+# Использовать толстые штрихи
+bold = { style = "Bold" }
+italic = { style = "Italic" }
+
+[cursor]
+# Стиль курсора
+style = { shape = "Block" }
+
+# Мигание курсора
+blink_interval = 750
+
+[scrolling]
+# История прокрутки
+history = 10000
+multiplier = 3
+
+[colors]
+# Цветовая схема (можно использовать built-in темы или кастомные)
+# Встроенные темы: dark, light, custom
+#colors = "dark"
+
+[colors.primary]
+background = "#1e1e1e"
+foreground = "#d4d4d4"
+
+[colors.normal]
+black = "#0c0c0c"
+red = "#c50f1f"
+green = "#13a10e"
+yellow = "#c19c00"
+blue = "#0037da"
+magenta = "#881798"
+cyan = "#3a96dd"
+white = "#cccccc"
+
+[colors.bright]
+black = "#767676"
+red = "#e74856"
+green = "#16c60c"
+yellow = "#f9f1a5"
+blue = "#3b78ff"
+magenta = "#b4009e"
+cyan = "#61d6d6"
+white = "#f2f2f2"
+
+[keyboard]
+# Быстрое меню (Ctrl+Shift+Space)
+#quickmenu = { key = "Space", mods = "Control|Shift" }
+
+#[terminal.shell]
+# Настройка оболочки по умолчанию
+#program = "powershell.exe"
+#args = ["-NoExit", "-Command", "Set-Location ~"]
+
+# Или для Windows Terminal / CMD:
+# program = "cmd.exe"
+# args = []
+
+# Или для WSL:
+ #program = "wsl.exe"
+ #args = ["~"]
+
+[env]
+# Переменные окружения
+TERM = "alacritty"
+
+[mouse]
+# Настройки мыши
+hide_when_typing = false
+
+[selection]
+# Настройки выделения текста
+save_to_clipboard = true
+
+[debug]
+# Логирование
+#log_level = "Warn"
