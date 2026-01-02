@@ -13,7 +13,7 @@ opacity = 0.95
 
 [font]
 # Основной шрифт
-#normal = { family = "Cascadia Code", style = "Regular" }
+normal = { family = "Fira Code", style = "Regular" }
 
 # Размер шрифта
 size = 14
@@ -95,3 +95,4 @@ save_to_clipboard = true
 [debug]
 # Логирование
 #log_level = "Warn"
+
