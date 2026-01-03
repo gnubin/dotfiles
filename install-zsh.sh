@@ -1,14 +1,14 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 set -e
 
-### CONFIG ###
+### Объявление переменных окружения для пуетй файлов конфигураци ###
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DOTFILES_DIR="$SCRIPT_DIR"
 ZSHRC_SOURCE="$DOTFILES_DIR/zsh/.zshrc"
 ZSHRC_TARGET="$HOME/.zshrc"
 
-### HELPERS ###
+### Функции логирования ###
 log() {
   echo -e "\033[1;32m[INFO]\033[0m $1"
 }
@@ -18,7 +18,7 @@ error() {
   exit 1
 }
 
-### 1. DETECT OS AND INSTALL ZSH ###
+### 1. Определение ОС и установа zsh ###
 log "Detecting OS and installing zsh..."
 
 if command -v zsh >/dev/null 2>&1; then
@@ -48,7 +48,7 @@ else
   esac
 fi
 
-### 2. SET ZSH AS DEFAULT SHELL ###
+### 2. Установка zsh как shell по умолчанию ###
 if [[ "$SHELL" != "$(command -v zsh)" ]]; then
   log "Setting zsh as default shell"
   chsh -s "$(command -v zsh)"
@@ -56,7 +56,7 @@ else
   log "zsh is already default shell"
 fi
 
-### 3. INSTALL OH MY ZSH ###
+### 3. Установка oh-my-zsh ###
 if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
   log "Installing Oh My Zsh"
   RUNZSH=no KEEP_ZSHRC=yes sh -c \
@@ -67,7 +67,7 @@ fi
 
 export ZSH_CUSTOM="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
 
-### 4. INSTALL POWERLEVEL10K ###
+### 4. Установка темы powerlevel10k ###
 if [[ ! -d "$ZSH_CUSTOM/themes/powerlevel10k" ]]; then
   log "Installing Powerlevel10k"
   git clone https://github.com/romkatv/powerlevel10k.git \
@@ -76,7 +76,7 @@ else
   log "Powerlevel10k already installed"
 fi
 
-### 5. INSTALL PLUGINS ###
+### 5. Установка плагинов ###
 log "Installing zsh plugins"
 
 if [[ ! -d "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting" ]]; then
@@ -89,7 +89,7 @@ if [[ ! -d "$ZSH_CUSTOM/plugins/zsh-autosuggestions" ]]; then
     "$ZSH_CUSTOM/plugins/zsh-autosuggestions"
 fi
 
-### 6. COPY .ZSHRC ###
+### 6. Копирование файла конфигураци .zshrc ###
 if [[ ! -f "$ZSHRC_SOURCE" ]]; then
   error ".zshrc not found in $DOTFILES_DIR"
 fi
@@ -97,16 +97,12 @@ fi
 log "Copying .zshrc"
 cp "$ZSHRC_SOURCE" "$ZSHRC_TARGET"
 
-### 7. APPLY CONFIG ###
+### 7. Применение конфигураци ###
 log "Applying zsh config"
 source "$ZSHRC_TARGET" || true
 
-### 8. RUN P10K CONFIGURE ###
-log "Starting Powerlevel10k configuration"
-echo
-echo "👉 After script finishes, run:"
-echo "   exec zsh"
+### 8. Подсказка для запуска настройки темы p10k ###
+echo "После завершения скрипта запустите команду:"
 echo "   p10k configure"
-echo
 
-log "Done ✅"
+log "Готово ✅"
