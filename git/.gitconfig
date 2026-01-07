@@ -1,0 +1,9 @@
+[user]
+	email = alexsms228@gmail.com
+	name = nub
+[alias]
+	st = status
+	ci = commit
+	br = branch
+	co = checkout
+	a = add .
