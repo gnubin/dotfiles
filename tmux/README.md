@@ -18,5 +18,9 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```bash
 cp ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
 ```
-
+- Заходим в tmux и применяем настройки
+```bash
+tmux
+# Ctrl+a r
+```
 
