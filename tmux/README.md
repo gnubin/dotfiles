@@ -21,6 +21,6 @@ cp ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
 - Заходим в tmux и применяем настройки
 ```bash
 tmux
-# Ctrl+a r
+# Ctrl+a I
 ```
 
