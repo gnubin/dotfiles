@@ -19,3 +19,7 @@ git clone https://github.com/gnubin/dotfiles.git
 ```bash
 ./dotfiles/install-alacritty.sh
 ```
+nix
+curl
+Obsidian
+KeepassXC
